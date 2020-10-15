@@ -18,9 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home','HomeController');
-Route::get('/post/{laman}',['uses'=>'PostController@post']);
+Route::get('/post/{id_post}',['uses'=>'PostController@index']);
 
 Route::get('/tulis','TulisController@index');
 Route::post('/tulis/create','TulisController@create');
+
+Route::get('/kategori','KategoriController');
+Route::post('/kategori/create', 'KategoriController@create');
+Route::get('/kategori/{id}/edit','KategoriController@edit');
+Route::post('/kategori/{id}/update','KategoriController@update');
 
 Auth::routes();

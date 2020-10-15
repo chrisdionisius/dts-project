@@ -17,15 +17,11 @@
 
         <hr>
         <form action="/tulis/create" method="POST">
-        {{csrf_field()}}
-        {{$value = $request->session()->get('key')}}
-        
+        {{csrf_field()}}       
             <div class="form-group">
                 <label for="formGroupExampleInput">Judul Berita</label>
-                <?php
-                echo $value;
-                ?>
                 <input type="text" class="form-control" name="headline" id="headline" placeholder="Judul Berita">
+                <input type="hidden" class="form-control" name="id_user" id="headline" value="{{$sessionId ?? ''}}">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Isi Berita </label>

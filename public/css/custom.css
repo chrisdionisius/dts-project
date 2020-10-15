@@ -1,0 +1,5 @@
+.gambar{
+    height: 30vh;
+    object-fit: cover;
+    max-width: 100%
+}

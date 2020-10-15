@@ -19,4 +19,8 @@ Auth::routes();
 
 Route::get('/home','HomeController');
 Route::get('/post/{laman}',['uses'=>'PostController@post']);
-// Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/tulis','TulisController@index');
+Route::post('/tulis/create','TulisController@create');
+
+Auth::routes();

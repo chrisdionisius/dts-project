@@ -27,13 +27,15 @@
                 @foreach($categories as $cat)
                 <tr>
                     <td>{{$cat->nama_kategori}}</td>
-                    <td>{{$cat->updated_at}}</td>
+                    <td>{{date('l, d F Y h:mA', strtotime($cat->updated_at))}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="/kategori/{{$cat->id}}/edit">
-                            <button type="button" class="btn btn-outline-warning">Edit</button>
-                        </a>
-                            <button type="button" class="btn btn-outline-danger">Hapus</button>
+                            <a href="/kategori/{{$cat->id}}/edit">
+                                <button type="button" class="btn btn-outline-warning">Edit</button>
+                            </a>
+                            <a href="/kategori/{{$cat->id}}/delete">
+                                <button type="button" class="btn btn-outline-danger" onclick="return confirm('Hapus kategori ?')">Hapus</button>
+                            </a>
                         </div>
                     </td>
                 </tr>

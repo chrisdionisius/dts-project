@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController');
 
 Auth::routes();
 
@@ -27,5 +25,13 @@ Route::get('/kategori','KategoriController');
 Route::post('/kategori/create', 'KategoriController@create');
 Route::get('/kategori/{id}/edit','KategoriController@edit');
 Route::post('/kategori/{id}/update','KategoriController@update');
+Route::get('/kategori/{id}/delete','KategoriController@delete');
+
+Route::get('/user','UserController');
+Route::get('/user/{id}/delete','UserController@delete');
+
+Route::get('/managepost','ManagePostController');
+Route::post('/managepost/{id}/update','ManagePostController@update');
+Route::get('/managepost/{id}/delete','ManagePostController@delete');
 
 Auth::routes();

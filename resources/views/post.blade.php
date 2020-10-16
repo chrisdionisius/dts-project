@@ -24,7 +24,7 @@
         <hr>
 
         <!-- Date/Time -->
-        <p>Posted on January 1, 2019 at 12:00 PM</p>
+        <p>Diposting pada {{date('F d, Y h:mA', strtotime($post->updated_at))}}</p>
 
         <hr>
 

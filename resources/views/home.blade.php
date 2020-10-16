@@ -23,10 +23,10 @@
             <div class="card-body">
                 <h2 class="card-title">{{$post->headline}}</h2>
                 <p class="card-text">{{substr($post->content,0,300)}}.......</p>
-                <a href="/post/{{$post->id_post}}" class="btn btn-primary">Read More &rarr;</a>
+                <a href="/post/{{$post->id}}" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
-                {{$post->created_at}}
+                {{date('l, d F Y', strtotime($post->created_at))}} By
                 <a href="#">{{$author->find($post->id_user)->name}}</a>
             </div>
             </div>

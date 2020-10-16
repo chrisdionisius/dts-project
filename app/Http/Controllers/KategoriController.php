@@ -24,4 +24,9 @@ class KategoriController extends Controller
         $category->update($request->all());
         return redirect('/kategori')->with('sukses','Data berhasil diupdate');
     }
+    public function delete($id){
+        $category=Category::find($id);
+        $category->delete();
+        return redirect('/kategori')->with('sukses','Data berhasil dihapus');
+    }
 }

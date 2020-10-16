@@ -21,7 +21,7 @@ class HomeController extends Controller
      */
     public function __invoke()
     {   
-        $posts=Post::paginate(5);
+        $posts=Post::orderby('id','desc')->paginate(5);
         $author=User::all();
         return view('Home',['posts'=>$posts],['author'=>$author]);
     }

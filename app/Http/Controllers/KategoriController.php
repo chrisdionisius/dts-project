@@ -19,7 +19,7 @@ class KategoriController extends Controller
         $category=Category::find($id);
         return view('editkategori',['category'=>$category]);
     }
-    public function update(Request $request,$id){
+    public function update(Request $request){
         $category=Category::find($id);
         $category->update($request->all());
         return redirect('/kategori')->with('sukses','Data berhasil diupdate');

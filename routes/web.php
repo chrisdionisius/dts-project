@@ -16,6 +16,7 @@ Route::get('/','HomeController');
 Auth::routes();
 
 Route::get('/home','HomeController');
+Route::get('/home/kategori/{id}','HomeController@kategori');
 Route::get('/post/{id_post}',['uses'=>'PostController@index']);
 
 Route::get('/tulis','TulisController@index');
@@ -29,9 +30,13 @@ Route::get('/kategori/{id}/delete','KategoriController@delete');
 
 Route::get('/user','UserController');
 Route::get('/user/{id}/delete','UserController@delete');
+Route::get('/user/editprofile','UserController@edit');
+Route::post('/user/update','UserController@update');
 
 Route::get('/managepost','ManagePostController');
 Route::post('/managepost/{id}/update','ManagePostController@update');
 Route::get('/managepost/{id}/delete','ManagePostController@delete');
+
+
 
 Auth::routes();

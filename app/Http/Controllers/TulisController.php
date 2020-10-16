@@ -15,7 +15,7 @@ class TulisController extends Controller
     public function index(){
         $categories = Category::all();
         $sessionId = Auth::user()->id;
-        return view('tulis',['categories'=>$categories,],['sessionId'=>$sessionId]);
+        return view('tulis',['categories'=>$categories,'sessionId'=>$sessionId]);
     }
     public function create(Request $request){
         Post::create($request->all());
